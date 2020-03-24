@@ -24,7 +24,7 @@ webpack 4
 ```
   npm install --save-dev autodll-webpack-plugin
 ```
-ps：html-webpack-plugin@next already used a new hook，here the version to fix it 
+ps：html-webpack-plugin@next already used the new hooks，here the version to fix it 
 
 ```
 new AutoDllPlugin({
