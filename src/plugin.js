@@ -136,6 +136,12 @@ class AutoDLLPlugin {
       };
 
       compiler.hooks.compilation.tap('AutoDllPlugin', compilation => {
+        if (settings.htmlWebpackPlugin) {
+          settings.htmlWebpackPlugin.getHooks(compilation)
+            .beforeAssetTagGeneration.tapAsync('AutoDllPlugin', doCompilation)
+          return
+        }
+
         if (!compilation.hooks.htmlWebpackPluginBeforeHtmlGeneration) {
           return;
         }

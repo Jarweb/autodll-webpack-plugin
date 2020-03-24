@@ -24,6 +24,22 @@ webpack 4
 ```
   npm install --save-dev autodll-webpack-plugin
 ```
+ps：html-webpack-plugin@next already used a new hook，here the version to fix it 
+
+```
+new AutoDllPlugin({
+  inject: true,
+  filename: '[name].[hash:8].js',
+  path: 'static/dll',
+  entry: {
+    vendor: [
+      'react',
+      'react-dom',
+    ],
+  },
+  htmlWebpackPlugin: HtmlWebpackPlugin // here the change
+})
+```
 
 webpack 2 / 3
 ```
